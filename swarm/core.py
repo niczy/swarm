@@ -80,7 +80,7 @@ class Swarm:
                 )
             case _:
                 try:
-                    return Result(value=str(result))
+                    return Result(value=json.dumps(result))
                 except Exception as e:
                     error_message = f"Failed to cast response to string: {result}. Make sure agent functions return a string or Result object. Error: {str(e)}"
                     debug_print(debug, error_message)
